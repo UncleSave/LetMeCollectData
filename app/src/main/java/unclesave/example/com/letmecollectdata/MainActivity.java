@@ -1,11 +1,16 @@
 package unclesave.example.com.letmecollectdata;
 
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity {
+    private SensorManager mSensorManager;
     // onCreate is executed when the activity is created
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,10 +19,15 @@ public class MainActivity extends AppCompatActivity {
         // Sets the file activity_main.xml as the user interface
         setContentView(R.layout.activity_main);
 
-        TextView firstTextView = findViewById(R.id.textView1);
-        TextView secondTextView = findViewById(R.id.textView2);
-        TextView secondTextView = findViewById(R.id.textView3);
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        List<Sensor> sensorList = mSensorManager.getSensorList(Sensor.TYPE_ALL);
 
-
+        StringBuilder sensorText = new StringBuilder();
+        for (Sensor currentSensor : sensorList ) {
+            sensorText.append(currentSensor.getName()).append(
+                    System.getProperty("line.separator"));
+        }
+        TextView sensorTextView = findViewById(R.id.sensor_list);
+        sensorTextView.setText(sensorText);
     }
 }
