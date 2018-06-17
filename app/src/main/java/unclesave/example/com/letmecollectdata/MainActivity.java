@@ -2,6 +2,7 @@ package unclesave.example.com.letmecollectdata;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
         // Sets the file activity_main.xml as the user interface
         setContentView(R.layout.activity_main);
 
-        TextView firstTextView = (TextView) findViewById(R.id.textView);
+        TextView firstTextView = findViewById(R.id.textView1);
+        TextView secondTextView = findViewById(R.id.textView2);
+        TextView secondTextView = findViewById(R.id.textView3);
+
+
     }
 }
