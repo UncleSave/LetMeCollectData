@@ -3,4 +3,7 @@
     <string name="xvalueinfo">x value is 0</string>
     <string name="yvalueinfo">y value is 0</string>
     <string name="zvalueinfo">z value is 0</string>
+    <string name="label_light">Light Sensor: %1$.2f</string>
+    <string name="label_proximity">Proximity Sensor: %1$.2f</string>
+    <string name="error_no_sensor">No sensor</string>
 </resources>
